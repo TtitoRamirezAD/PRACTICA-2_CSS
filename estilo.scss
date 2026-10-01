@@ -1,0 +1,79 @@
+$color-base: orange;
+
+@function color-alerta($nivel) {
+    @if $nivel == 1 {
+        @return lighten($color-base, 30%);
+    } @else if $nivel == 2 {
+        @return lighten($color-base, 20%);
+    } @else if $nivel == 3 {
+        @return lighten($color-base, 10%);
+    } @else {
+        @return darken($color-base, 10%);
+    }
+}
+
+@keyframes borde {
+    0% {
+        border-color: red;
+    }
+    50% {
+        border-color: yellow;
+    }
+    100% {
+        border-color: red;
+    }
+}
+
+.alerta {
+    padding: 15px;
+    margin: 10px;
+    color: white;
+    border: 3px solid transparent;
+
+    &.info {
+        background-color: color-alerta(1);
+    }
+
+    &.success {
+        background-color: color-alerta(2);
+    }
+
+    &.warning {
+        background-color: color-alerta(3);
+    }
+
+    &.danger {
+        background-color: color-alerta(4);
+        animation: borde 1s infinite;
+    }
+}
+
+@for $i from 1 through 3 {
+    .card-#{$i} {
+        font-size: 16px + ($i * 2px);
+        box-shadow: 0 0 ($i * 5px) #000000;
+        margin: 10px;
+        border: 2px solid $color-base;
+    }
+}
+
+
+@function color-texto($intensidad) {
+    @if $intensidad > 50% {
+        @return #000000;
+    } @else {
+        @return #ffffff;
+    }
+}
+
+.card-4 {
+    background-color: aquamarine;
+    color: color-texto(80%);
+    padding: 20px;
+}
+
+.card-5 {
+    background-color: brown;
+    color: color-texto(20%);
+    padding: 20px;
+}

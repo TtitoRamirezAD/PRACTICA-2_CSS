@@ -1,0 +1,63 @@
+@keyframes borde {
+  0% {
+    border-color: red;
+  }
+  50% {
+    border-color: yellow;
+  }
+  100% {
+    border-color: red;
+  }
+}
+.alerta {
+  padding: 15px;
+  margin: 10px;
+  color: white;
+  border: 3px solid transparent;
+}
+.alerta.info {
+  background-color: #ffdb99;
+}
+.alerta.success {
+  background-color: #ffc966;
+}
+.alerta.warning {
+  background-color: #ffb733;
+}
+.alerta.danger {
+  background-color: #cc8400;
+  animation: borde 1s infinite;
+}
+
+.card-1 {
+  font-size: 18px;
+  box-shadow: 0 0 5px #000000;
+  margin: 10px;
+  border: 2px solid orange;
+}
+
+.card-2 {
+  font-size: 20px;
+  box-shadow: 0 0 10px #000000;
+  margin: 10px;
+  border: 2px solid orange;
+}
+
+.card-3 {
+  font-size: 22px;
+  box-shadow: 0 0 15px #000000;
+  margin: 10px;
+  border: 2px solid orange;
+}
+
+.card-4 {
+  background-color: aquamarine;
+  color: #000000;
+  padding: 20px;
+}
+
+.card-5 {
+  background-color: brown;
+  color: #ffffff;
+  padding: 20px;
+}/*# sourceMappingURL=estilo.css.map */
